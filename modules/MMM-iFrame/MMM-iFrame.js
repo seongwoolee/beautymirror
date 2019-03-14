@@ -63,10 +63,6 @@ resume: function() {
 
 		return wrapper;
         },
-        notificationReceived: function(notification, payload) {
-		if(notification === "DOM_OBJECTS_CREATED"){
-			this.hide()
-		}
-	}
+        
 
 });
