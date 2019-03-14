@@ -28,13 +28,13 @@ var config = {
 	modules: [
 		{
 			module: 'MMM-iFrame',
-			position: "bottom_center",	// This can be any of the regions.
+			position: "top_center",	// This can be any of the regions.
 			config: {
 				// See 'Configuration options' for more information.
 					url: ["https://comic.naver.com/webtoon/weekday.nhn"],  // as many URLs you want or you can just ["ENTER IN URL"] if single URL.
 					updateInterval: 0.5 * 60 * 1000, // rotate URLs every 30 seconds
-					width: "2000", // width of iframe
-					height: "1800", // height of iframe
+					width: "1000", // width of iframe
+					height: "500", // height of iframe
 					frameWidth: "950" // width of embedded iframe, height is beeing calculated by aspect ratio of iframe
 
 				}
@@ -50,7 +50,9 @@ var config = {
 					"HluANRwPyNo", 
 					"ldZsablWkjA"
 				  ],
-				loop: true
+				loop: true,
+				height: 345,
+				width: 800,
 			}
 		},
 		
