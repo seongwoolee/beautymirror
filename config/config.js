@@ -168,6 +168,7 @@ var config = {
 							img:"https://apprecs.org/gp/images/app-icons/300/ec/com.nhn.android.webtoon.jpg",
 							width:"50",
 							height:"50",
+							
                           },
                      "2": {
 	                  		module: "MMM-EmbedYoutube",
