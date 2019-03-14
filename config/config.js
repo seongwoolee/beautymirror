@@ -163,19 +163,8 @@ var config = {
 				showBorder:false,
 				direction:"column",
                    buttons: {
-                    "1": {
-	                  		module: "MMM-iFrame",
-							img:"https://apprecs.org/gp/images/app-icons/300/ec/com.nhn.android.webtoon.jpg",
-							width:"50",
-							height:"50",
-							
-                          },
-                     "2": {
-	                  		module: "MMM-EmbedYoutube",
-							img:"https://cdn.pixabay.com/photo/2016/08/27/03/02/youtube-1623577_960_720.png",
-							width:"50",
-							height:"50",
-                          },
+					
+					
                 },
 
                 // See 'Configuration options' for more information.
