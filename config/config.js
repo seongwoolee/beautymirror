@@ -35,11 +35,9 @@ var config = {
 					updateInterval: 0.5 * 60 * 1000, // rotate URLs every 30 seconds
 					width: "2000", // width of iframe
 					height: "1800", // height of iframe
-					frameWidth: "950" // width of embedded iframe, height is beeing calculated by aspect ratio of iframe
-
+					frameWidth: "950", // width of embedded iframe, height is beeing calculated by aspect ratio of iframe
 				}
 		},
-		
 		{
 			module: "MMM-EmbedYoutube", // Path to youtube module from modules folder Exmaple: MagicMirror/modules/custom/MMM-EmbedYoutube/ so it's custom/MMM-EmbedYoutube
 			position: "bottom_bar",	// This can be any of the regions.
@@ -53,7 +51,6 @@ var config = {
 				loop: true
 			}
 		},
-		
 		/*
 		{
 			module: 'MMM-SmartWebDisplay',

@@ -62,52 +62,46 @@ Module.register("MMM-Modulebar",{
         return menu;
     },
 
-	// Creates the buttons.
+	// 버튼 생성
     createButton: function (self, num, data, placement) {
-		// Creates the span elemet to contain all the buttons.
+		// span Element 생성
 		var item = document.createElement("span");
-        // Builds a uniqe indentity / button.
+        // 모듈 id 설정
 		item.id = self.identifier + "_button_" + num;
-        // Sets a class to all buttons.
+        // 모든 모듈 클래스 지정
 		item.className = "modulebar-button";
-        // Makes sure the width and height is at least the defined minimum.
+		//최소의 넓이 높이 지정.
 		item.style.minWidth = self.config.minWidth;
         item.style.minHeight = self.config.minHeight;
-		// Collects all modules loaded in MagicMirror.
+		// 매직미러에 로드된 모든 모듈들을 호출
 		var modules = MM.getModules();
-		// When a button is clicked, the module either gets hidden or shown depending on current module status.
+		// 클릭시
 		item.addEventListener("click", function () {
-			// Lists through all modules for testing.
+			// 모든 모듈체크
 			for (var i = 0; i < modules.length; i++) {
-				// Check if the curent module is the one.
+				// 현재 모듈 확인
 				if (modules[i].name === data.module) {
-					// Splits out the module number of the module with the same name.
 					var idnr = modules[i].data.identifier.split("_");
-					// Checks if idnum is set in config.js. If it is, it only hides that module, if not hides all modules with the same name.
+					console.log("idnr : "+idnr+"idnum"+data.idnum);
 					if (idnr[1] == data.idnum || data.idnum == null) {
-						// Check if the module is hidden.
+						// 모듈이 숨겨져있는 상태일때
 						if (modules[i].hidden) {
-							// Check if there is a "showURL" defined.
+							// Showurl 설정 확인
 							if (data.showUrl != null) {
-								// Visiting the show URL.
+								//Show url
 								fetch(data.showUrl);
-								// Prints the visited hideURL.
 								console.log("Visiting show URL: "+data.showUrl);
 							}
-							// Shows the module.
-							modules[i].show(self.config.animationSpeed, {force: self.config.allowForce});
-							// Prints in the console what just happend (adding the ID). 
+							// 모듈 보이기
+							modules[i].show(self.config.animationSpeed, {force: self.config.allowForce}); 
 							console.log("Showing "+modules[i].name+" ID: "+idnr[1]);
 						}else{
-							// Hides the module.
+							// 모듈이 켜있는 상태일때 
 							modules[i].hide(self.config.animationSpeed, {force: self.config.allowForce});
-							// Prints in the console what just happend (adding the ID). 
 							console.log("Hiding "+modules[i].name+" ID: "+idnr[1]);
-							// Check if there is a "hideURL" defined.
+							// hideURL이 설정되 있을 때
 							if (data.hideUrl != null) {
-								// Visiting the the URL.
 								fetch(data.hideUrl);
-								// Prints the visited hideURL.
 								console.log("Visiting hide URL: "+data.hideUrl);
 							}
 						}
@@ -115,7 +109,8 @@ Module.register("MMM-Modulebar",{
 				}
 			}
 		});
-		// Fixes the aligning.
+
+		// 버튼 배열
         item.style.flexDirection = {
             "right"  : "row-reverse",
             "left"   : "row",
