@@ -39,7 +39,20 @@ var config = {
 				}
 		},
 		{
-			module: "MMM-EmbedYoutube", // Path to youtube module from modules folder Exmaple: MagicMirror/modules/custom/MMM-EmbedYoutube/ so it's custom/MMM-EmbedYoutube
+			module: "MMM-EmbedYoutube1", // Path to youtube module from modules folder Exmaple: MagicMirror/modules/custom/MMM-EmbedYoutube/ so it's custom/MMM-EmbedYoutube
+			position: "bottom_bar",	// This can be any of the regions.
+			config: {
+				// See 'Configuration options' in README.md for more information.
+				video_id: "w3jLJU7DT5E",
+				video_list: [
+					"HluANRwPyNo", 
+					"ldZsablWkjA"
+				  ],
+				loop: true
+			}
+		},
+		{
+			module: "MMM-EmbedYoutube2", // Path to youtube module from modules folder Exmaple: MagicMirror/modules/custom/MMM-EmbedYoutube/ so it's custom/MMM-EmbedYoutube
 			position: "bottom_bar",	// This can be any of the regions.
 			config: {
 				// See 'Configuration options' in README.md for more information.
@@ -167,11 +180,17 @@ var config = {
 							height:"50",
                           },
                      "2": {
-	                  		module: "MMM-EmbedYoutube",
+	                  		module: "MMM-EmbedYoutube1",
 							img:"https://cdn.pixabay.com/photo/2016/08/27/03/02/youtube-1623577_960_720.png",
 							width:"50",
 							height:"50",
-                          },
+						  },
+					 "3": {
+							module: "MMM-EmbedYoutube2",
+						  img:"https://cdn.pixabay.com/photo/2016/08/27/03/02/youtube-1623577_960_720.png",
+						  width:"50",
+						  height:"50",
+						},
                 },
 
                 // See 'Configuration options' for more information.

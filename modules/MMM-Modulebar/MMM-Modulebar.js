@@ -93,16 +93,21 @@ Module.register("MMM-Modulebar",{
 								console.log("Visiting show URL: "+data.showUrl);
 							}
 							//한 프레임에 두가지이상의 모듈이 뜨지 않게 하기.
-							if (modules[i].name == 'MMM-EmbedYoutube') {
+							if (modules[i].name == 'MMM-EmbedYoutube1') {
                                 console.log("Hiding opend "+ modules[i-1].name+" ID: "+idnr[1]);
                                 modules[i-1].hide(self.config.animationSpeed, {force: self.config.allowForce});
-                                
+                                modules[i+1].hide(self.config.animationSpeed, {force: self.config.allowForce});
                             }
 							else if(modules[i].name == 'MMM-iFrame') {
                                 console.log("Hiding opend "+ modules[i+1].name+" ID: "+idnr[1]);
                                 modules[i+1].hide(self.config.animationSpeed, {force: self.config.allowForce});
-                                
+                                modules[i+2].hide(self.config.animationSpeed, {force: self.config.allowForce});
                             }
+							else if(modules[i].name == 'MMM-EmbedYoutube2') {
+	                                console.log("Hiding opend "+ modules[i+1].name+" ID: "+idnr[1]);
+	                                modules[i-1].hide(self.config.animationSpeed, {force: self.config.allowForce});
+	                                modules[i-2].hide(self.config.animationSpeed, {force: self.config.allowForce});
+	                            }
 							// 모듈 보이기
 							modules[i].show(self.config.animationSpeed, {force: self.config.allowForce}); 
 							console.log("Showing "+modules[i].name+" ID: "+idnr[1]);
