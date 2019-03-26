@@ -166,7 +166,7 @@ var config = {
 
         
         {
-            module: "MMM-Modulebar",
+            module: "MMM-Modulebar1",
             position: "top_left", // This can be any of the regions.
             classes: "default everyone", // Optional
             config: {
