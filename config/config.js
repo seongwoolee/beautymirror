@@ -56,7 +56,7 @@ var config = {
 			position: "bottom_bar",	// This can be any of the regions.
 			config: {
 				// See 'Configuration options' in README.md for more information.
-				video_id: "w3jLJU7DT5E",
+				video_id: "r6A7Fsci7Ds",
 				video_list: [
 					"HluANRwPyNo", 
 					"ldZsablWkjA"
