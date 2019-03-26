@@ -26,6 +26,7 @@ var config = {
 	units: "metric",
 
 	modules: [
+		//0
 		{
 			module: 'MMM-iFrame',
 			position: "bottom_center",	// This can be any of the regions.
@@ -38,6 +39,7 @@ var config = {
 					frameWidth: "950", // width of embedded iframe, height is beeing calculated by aspect ratio of iframe
 				}
 		},
+		//1
 		{
 			module: "MMM-EmbedYoutube1", // Path to youtube module from modules folder Exmaple: MagicMirror/modules/custom/MMM-EmbedYoutube/ so it's custom/MMM-EmbedYoutube
 			position: "bottom_bar",	// This can be any of the regions.
@@ -51,6 +53,7 @@ var config = {
 				loop: true
 			}
 		},
+		//2
 		{
 			module: "MMM-EmbedYoutube2", // Path to youtube module from modules folder Exmaple: MagicMirror/modules/custom/MMM-EmbedYoutube/ so it's custom/MMM-EmbedYoutube
 			position: "bottom_bar",	// This can be any of the regions.
@@ -83,6 +86,7 @@ var config = {
 				}
 		},
 		*/
+		//3
         {
             module: "MMM-Test",
             position: "top_left",
@@ -164,7 +168,7 @@ var config = {
 		*/
 
 
-        
+        //4
         {
             module: "MMM-Modulebar1",
             position: "top_left", // This can be any of the regions.
@@ -179,13 +183,33 @@ var config = {
 							width:"50",
 							height:"50",
                           },
-                     "2": {
+					 "2": {
+							module: "MMM-Modulebar",
+						  img:"https://cdn.pixabay.com/photo/2016/08/27/03/02/youtube-1623577_960_720.png",
+						  width:"50",
+						  height:"50",
+						},
+                },
+
+                // See 'Configuration options' for more information.
+            }
+		},
+		//5
+		{
+            module: "MMM-Modulebar",
+            position: "top_left", // This can be any of the regions.
+            classes: "default everyone", // Optional
+            config: {
+				showBorder:false,
+				direction:"column",
+                   buttons: {
+                     "1": {
 	                  		module: "MMM-EmbedYoutube1",
 							img:"https://cdn.pixabay.com/photo/2016/08/27/03/02/youtube-1623577_960_720.png",
 							width:"50",
 							height:"50",
 						  },
-					 "3": {
+					 "2": {
 							module: "MMM-EmbedYoutube2",
 						  img:"https://cdn.pixabay.com/photo/2016/08/27/03/02/youtube-1623577_960_720.png",
 						  width:"50",
