@@ -1,4 +1,17 @@
-var Test;
+Module.register("MMM-Test", {
+  defaults: {},
+  start: function () {},
+  getDom: function() {
+    var element = document.createElement("div")
+    element.className = "myContent"
+    element.innerHTML = "Hello, World1!"
+    return element
+  },
+  notificationReceived: function() {},
+  socketNotificationReceived: function() {},
+})
+
+/*var Test;
 Module.register("MMM-Test", {
     defaults: {},
     start: function (){
@@ -22,13 +35,14 @@ Module.register("MMM-Test", {
     switch(notification) {
       case "DOM_OBJECTS_CREATED":
       
-      var elem = document.getElementById("COUNT")
+      var elem = document.getElementById("COUNT")*/
       /*
       elem.addEventListener("click", () => {
         this.sendNotification('CHANGE_POSITIONS', ...
     ...
     },
     */
+   /*
       elem.addEventListener("click", () => {
         elem.innerHTML = "startt"
         this.sendNotification('CHANGE_POSITIONS', 
@@ -44,4 +58,4 @@ Module.register("MMM-Test", {
         break
     }
   },
-})
+})*/
