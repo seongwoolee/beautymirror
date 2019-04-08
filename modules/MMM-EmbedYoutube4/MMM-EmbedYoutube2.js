@@ -7,43 +7,48 @@
  * By Nitipoom Unrrom (aka nitpum) https://nitpum.com
  * MIT Licensed.
  */
-Module.register("MMM-EmbedYoutube1", {
+Module.register("MMM-EmbedYoutube2", {
 	defaults: {
 		autoplay: false,
 		color: "red",
 		controls : true,
 		disablekb: false,
 		fs: true,
-		height: 860,
-		width: 1200,
+		height: 315,
+		width: 560,
 		loop: false,
 		modestbranding: false,
 		rel : false,
 		showinfo : false,
 		video_id : "",
 		playlist: "",
-		video_list: [],
-		searchlist: "프레이"
+		video_list: []
 	},
 	getDom: function () {
 		var wrapper = document.createElement("div");
-		
+
 		// Parameter
 		var params = "";
-		var search_list="&listType=search&list=";
-                search_list += this.config.searchlist;
+
+		var videoList = "";
+		if (this.config.video_list && this.config.video_list.length > 0) {
+			videoList = "&playlist=";
+			for (var i = 0; i < this.config.video_list.length; i++) {
+				videoList += this.config.video_list[i];
+				if (i + 1 < this.config.video_list.length)
+					videoList += ",";
+			}
+		}
 		params += (this.config.autoplay) ? "autoplay=1" : "autoplay=0";
 		params += (typeof this.config.color !== "undefined" && this.config.color != "red")? "&color=" + this.config.color:"";
 		params += (this.config.controls)? "&controls=1":"&controls=0";
-
 		params += (this.config.disablekb)? "&disablekb=1":"";
 		params += (this.config.fs)? "":"&fs=0";
+		params += (videoList != "" && (typeof this.config.playlist === "undefined" || this.config.playlist == "")) ? videoList : "&playlist=" + this.config.video_id; // required playlist to loopable
 		params += (this.config.loop) ? "&loop=1" : "";
 		params += (this.config.modestbranding) ? "&modestbranding=1" : "";
 		params += (this.config.rel)? "&rel=1": "&rel=0";
 		params += (this.config.showinfo)? "&showinfo=1": "&showinfo=0";
-		params += this.config.searchlist;
-                params += search_list;
 
 		var videoId = this.config.video_id +"?version=3";
 		if (typeof this.config.playlist !== "undefined" && this.config.playlist != "")
@@ -57,5 +62,4 @@ Module.register("MMM-EmbedYoutube1", {
 			this.hide()
 		}
 	}
-
 });

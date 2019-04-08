@@ -95,13 +95,14 @@ Module.register("MMM-Modulebar1",{
 							//한 프레임에 두가지이상의 모듈이 뜨지 않게 하기.
 							
 							if (modules[i].name == 'MMM-Modulebar') {
-                                console.log("Hiding opend "+ modules[i-5].name+" ID: "+idnr[1]);
+                                console.log("Hiding opend "+ modules[i-3].name+" ID: "+idnr[1]);
                                 modules[0].hide(self.config.animationSpeed, {force: self.config.allowForce});
                             }
 							else if(modules[i].name == 'MMM-iFrame') {
                                 console.log("Hiding opend "+ modules[i+5].name+" ID: "+idnr[1]);
-                                modules[i+5].hide(self.config.animationSpeed, {force: self.config.allowForce});
+                                //modules[i+5].hide(self.config.animationSpeed, {force: self.config.allowForce});
                             }
+				
 							
 							// 모듈 보이기
 							modules[i].show(self.config.animationSpeed, {force: self.config.allowForce}); 
